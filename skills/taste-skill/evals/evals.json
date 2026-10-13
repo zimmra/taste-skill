@@ -1,6 +1,6 @@
 {
   "skill_name": "design-taste-frontend",
-  "how_to_run": "For each eval, give the prompt to a fresh agent that has this skill, and to a second fresh agent without it (the baseline). Render both with scripts/inspect.mjs and have a judge who does not know which is which score the screenshots with references/critique.md. Record inspector FAIL counts for both.",
+  "how_to_run": "For each evaluation, give the prompt to a fresh agent that has this skill, and to a second fresh agent without it (the baseline). Render both with scripts/inspect.mjs and have a judge who does not know which is which score the screenshots with references/critique.md. Record inspector FAIL counts for both.",
   "evals": [
     {
       "id": 1,
