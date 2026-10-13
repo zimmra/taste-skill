@@ -158,13 +158,13 @@ export class Page {
   }
 
   // Evaluates a function (serialised) or an expression string in the page and returns its JSON value.
-  async eval(fnOrExpr, arg) {
+  async evaluate(fnOrExpr, arg) {
     const expression = typeof fnOrExpr === 'function'
       ? `(${fnOrExpr.toString()})(${arg === undefined ? '' : JSON.stringify(arg)})`
       : fnOrExpr;
     const r = await this.send('Runtime.evaluate', { expression, awaitPromise: true, returnByValue: true }, 30000);
     if (r.exceptionDetails) {
-      throw new Error('page eval: ' + (r.exceptionDetails.exception?.description || r.exceptionDetails.text));
+      throw new Error('page evaluation: ' + (r.exceptionDetails.exception?.description || r.exceptionDetails.text));
     }
     return r.result?.value;
   }
